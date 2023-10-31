@@ -24,9 +24,9 @@ ln -s $(pwd)/format-diff.sh /usr/local/sbin/format-diff
 
 This script requires that you have the following tools available on your system:
 
-* `icdiff` : https://github.com/jeffkaufman/icdiff  -- provides the simple, color diff.
+* `delta` : https://github.com/dandavison/delta  -- provides the simple, color diff.
 * `aha` : https://github.com/theZiz/aha  -- converts the from ANSI console output to HTML as an intermediate representation.
-* `wkhtmltopdf` : https://wkhtmltopdf.org/ -- converts the HTML version to PDF.
+* `wkhtmltopdf` : https://wkhtmltopdf.org/  -- converts the HTML version to PDF.
 
 ## Usage
 

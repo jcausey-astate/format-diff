@@ -6,6 +6,12 @@ if [ -z "${1}" ]; then
     exit 1
 fi
 
+if [ -z "${WIDTH}" ]; then
+    WIDTH=180
+fi
+
+LINEWIDTH=$(( WIDTH / 2 ))
+
 tmpfile=$(mktemp /tmp/format-compare.XXXXXX)
 
 filename=$(basename -- "${1}")
@@ -16,7 +22,7 @@ cp "${1}" "${formatted_filename}"
 clang-format -i "${formatted_filename}"
 mv "${formatted_filename}" "${formatted_filename}"
 
-icdiff --cols=160 "${1}" "${formatted_filename}" | aha > "${tmpfile}.html"
+delta --side-by-side --light --width="${WIDTH}" --line-buffer-size=64 --max-line-length="${LINEWIDTH}" --paging=never --true-color=always --diff-highlight  "${1}" "${formatted_filename}" | aha > "${tmpfile}.html"
 rm "${formatted_filename}"
 [[ $? -eq 0 ]] && wkhtmltopdf "${tmpfile}.html" "${tmpfile}.pdf" >/dev/null 2>&1
 [[ $? -eq 0 ]] && mv "${tmpfile}.pdf" "${1%.*}_format-diff.pdf"
