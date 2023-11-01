@@ -24,6 +24,7 @@ ln -s $(pwd)/format-diff.sh /usr/local/sbin/format-diff
 
 This script requires that you have the following tools available on your system:
 
+* `git` (for `git diff`) : https://git-scm.com/ -- Used to analyze the original and formatted file for differences.
 * `delta` : https://github.com/dandavison/delta  -- provides the simple, color diff.
 * `aha` : https://github.com/theZiz/aha  -- converts the from ANSI console output to HTML as an intermediate representation.
 * `wkhtmltopdf` : https://wkhtmltopdf.org/  -- converts the HTML version to PDF.
