@@ -33,7 +33,7 @@ This script requires that you have the following tools available on your system:
 
 `format-diff.sh` _`sourceFile.cpp`_
 
-The _`sourceFile`_ should be a C++ source or header file.  A PDF named e.g. "sourceFile_format-diff.pdf" will be created in the same directory.
+The _`sourceFile`_ should be a C++ source or header file.  A PDF named e.g. "sourceFile_cpp-format-diff.pdf" will be created in the same directory.
 
 ## License
 

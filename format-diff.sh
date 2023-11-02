@@ -25,6 +25,6 @@ mv "${formatted_filename}" "${formatted_filename}"
 delta --side-by-side --light --width="${WIDTH}" --line-buffer-size=64 --max-line-length="${LINEWIDTH}" --paging=never --true-color=always --diff-highlight  "${1}" "${formatted_filename}" | aha > "${tmpdir}/${filename}.html"
 rm "${formatted_filename}"
 [[ $? -eq 0 ]] && wkhtmltopdf "${tmpdir}/${filename}.html" "${tmpdir}/${filename}.pdf" >/dev/null 2>&1
-[[ $? -eq 0 ]] && mv "${tmpdir}/${filename}.pdf" "${1%.*}-format-diff.pdf"
+[[ $? -eq 0 ]] && mv "${tmpdir}/${filename}.pdf" "${1%.*}_${extension}-format-diff.pdf"
 
 rm -rf "${tmpdir}"
